@@ -10,7 +10,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
       className="group animate-fade-up flex flex-col overflow-hidden rounded-lg border bg-card transition-colors hover:border-primary/60"
       style={{ animationDelay: `${index * 80}ms` }}
     >
-      <Link to="/produits/$slug" params={{ slug: product.slug }} className="relative block aspect-square overflow-hidden">
+      <Link to="/products/$slug" params={{ slug: product.slug }} className="relative block aspect-square overflow-hidden">
         <img
           src={product.image}
           alt={`${product.name} — bidon 5 L MAN Professionnel`}
@@ -29,7 +29,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
         <p className="mt-2 flex-1 text-sm text-muted-foreground">{product.tagline}</p>
         <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Format : <span className="text-foreground">{product.format}</span></p>
         <div className="mt-5 grid grid-cols-2 gap-2">
-          <Link to="/produits/$slug" params={{ slug: product.slug }} className="btn-outline !px-3 !py-2.5 !text-xs">
+          <Link to="/products/$slug" params={{ slug: product.slug }} className="btn-outline !px-3 !py-2.5 !text-xs">
             Voir détails <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           <a href={waProduct(product.name)} target="_blank" rel="noreferrer" className="btn-primary !px-3 !py-2.5 !text-xs">

@@ -6,9 +6,9 @@ import { CONTACT, waGeneral } from "@/lib/contact";
 
 const nav = [
   { to: "/", label: "Accueil" },
-  { to: "/produits", label: "Produits" },
+  { to: "/products", label: "Produits" },
   { to: "/solutions", label: "Solutions professionnelles" },
-  { to: "/a-propos", label: "À propos" },
+  { to: "/about", label: "À propos" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
