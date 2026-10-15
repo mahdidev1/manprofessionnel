@@ -7,7 +7,7 @@ const keys = categories.map((c) => c.key) as string[];
 
 export const Route = createFileRoute("/products/")({
   validateSearch: (s: Record<string, unknown>): { cat?: CategoryKey } =>
-    typeof s.cat === "string" && keys.includes(s.cat) ? { cat: s.cat as CategoryKey } : {},
+    typeof s["cat"] === "string" && keys.includes(s["cat"]) ? { cat: s["cat"] as CategoryKey } : {},
   head: () => ({
     meta: [
       { title: "Produits — MAN Professionnel" },
