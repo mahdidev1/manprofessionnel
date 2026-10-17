@@ -25,7 +25,7 @@ export function PageHeader({ eyebrow, title, text }: { eyebrow: string; title: s
     <section className="border-b bg-surface">
       <div className="mx-auto max-w-7xl px-5 py-16 md:py-24">
         <p className="eyebrow animate-fade-up">{eyebrow}</p>
-        <h1 className="animate-fade-up mt-4 max-w-4xl text-4xl font-black uppercase leading-[0.95] md:text-6xl">{title}</h1>
+        <h1 className="animate-fade-up mt-4 max-w-4xl text-3xl font-black uppercase leading-[0.95] md:text-6xl">{title}</h1>
         {text && <p className="animate-fade-up mt-5 max-w-2xl text-lg text-muted-foreground">{text}</p>}
       </div>
     </section>

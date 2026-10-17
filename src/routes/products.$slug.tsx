@@ -90,7 +90,7 @@ function ProductDetail() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16">
-        <h2 className="text-3xl font-black uppercase">Produits similaires</h2>
+        <h2 className="text-3xl font-black uppercase">Autres produits</h2>
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {similar.map((s, i) => <ProductCard key={s.slug} product={s} index={i} />)}
         </div>

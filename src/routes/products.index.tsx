@@ -26,8 +26,8 @@ function ProductsPage() {
   return (
     <>
       <PageHeader eyebrow="Catalogue" title="Nos produits" text="Des formats professionnels de 5 L pour le lavage, l'intérieur, le moteur et les pneus." />
-      <section className="mx-auto max-w-7xl px-5 py-12">
-        <div className="flex flex-wrap  ">
+      <section className="mx-auto max-w-8xl px-3 py-12">
+        <div className="flex flex-wrap mb-5 gap-2 sm:mb-10">
           {filters.map((f) => {
             const active = cat === f.key;
             return (
