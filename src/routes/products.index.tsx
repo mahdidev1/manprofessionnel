@@ -27,7 +27,7 @@ function ProductsPage() {
     <>
       <PageHeader eyebrow="Catalogue" title="Nos produits" text="Des formats professionnels de 5 L pour le lavage, l'intérieur, le moteur et les pneus." />
       <section className="mx-auto max-w-7xl px-5 py-12">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap  ">
           {filters.map((f) => {
             const active = cat === f.key;
             return (
@@ -42,7 +42,7 @@ function ProductsPage() {
             );
           })}
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
           {list.map((p, i) => <ProductCard key={p.slug} product={p} index={i} />)}
         </div>
       </section>

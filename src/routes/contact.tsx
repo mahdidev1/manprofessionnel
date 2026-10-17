@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/CTASection";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import { products } from "@/data/products";
 import { CONTACT, waGeneral, waLink } from "@/lib/contact";
+import { CardContent } from "@/components/ui/card";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -58,20 +59,20 @@ function Contact() {
             </a>
           ))}
         </div>
-        <form onSubmit={submit} className="grid gap-4 rounded-lg border bg-surface p-6 md:p-8 sm:grid-cols-2">
-          <label className="grid gap-2 text-sm font-semibold">Nom<input required maxLength={100} className={field} value={f.nom} onChange={set("nom")} /></label>
-          <label className="grid gap-2 text-sm font-semibold">Téléphone<input required type="tel" maxLength={30} className={field} value={f.tel} onChange={set("tel")} /></label>
-          <label className="grid gap-2 text-sm font-semibold">Email<input type="email" maxLength={255} className={field} value={f.email} onChange={set("email")} /></label>
-          <label className="grid gap-2 text-sm font-semibold">Produit qui vous intéresse
-            <select className={field} value={f.produit} onChange={set("produit")}>
-              <option value="">— Choisir —</option>
-              {products.map((p) => <option key={p.slug} value={`${p.name} 5 L`}>{p.name}</option>)}
-              <option value="Autre">Autre</option>
-            </select>
-          </label>
-          <label className="grid gap-2 text-sm font-semibold sm:col-span-2">Message<textarea rows={5} maxLength={1000} className={field} value={f.message} onChange={set("message")} /></label>
-          <button type="submit" className="btn-primary sm:col-span-2"><Send className="h-4 w-4" /> Envoyer la demande</button>
-        </form>
+        <div  className="overflow-hidden border-border/40 bg-card shadow-soft h-full">
+          <CardContent className="w-full h-100 p-1 ">
+                <iframe
+                  title="Ubicación de Bar Restaurante Armenia"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.2069201264485!2d10.5819522!3d35.7281456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fdf50507b6c911%3A0xce1fb1a0f7417c78!2s7N%20LAB%2C%2065%20Rue%20Sidi%20Hammouda%2C%20Msaken%2C%20Tunisia!5e0!3m2!1sen!2stn!4v1693343459787!5m2!1sen!2stn"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </CardContent>
+        </div>
       </section>
     </>
   );

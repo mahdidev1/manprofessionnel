@@ -39,9 +39,8 @@ function ProductDetail() {
   const [qty, setQty] = useState(1);
   const cat = getCategory(p.category);
   const features = [
-    "Format professionnel 5 L",
-    `Pour ${cat.label.toLowerCase()}`,
-    ...p.highlights.filter((h) => !h.includes("5 L")),
+
+    ...p.highlights,
   ];
   const similar = products.filter((x) => x.slug !== p.slug).slice(0, 3);
 
@@ -52,7 +51,7 @@ function ProductDetail() {
           <ChevronLeft className="h-4 w-4" /> Tous les produits
         </Link>
         <div className="mt-6 grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="animate-fade-up overflow-hidden rounded-lg border bg-card">
+          <div className="animate-fade-up overflow-hidden rounded-lg ">
             <img src={p.image} alt={`${p.name} — bidon 5 L`} width={1024} height={1024} className="aspect-square w-full object-cover" />
           </div>
           <div className="animate-fade-up flex flex-col justify-center" style={{ animationDelay: "120ms" }}>
@@ -61,14 +60,12 @@ function ProductDetail() {
             <div className="mt-5 inline-flex w-fit items-center gap-2 rounded-sm border px-3 py-1.5 text-sm font-bold">
               Format : <span className="text-primary">{p.format}</span>
             </div>
-            <p className="mt-6 text-lg text-muted-foreground">{p.description}</p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <div className="flex items-center rounded-md border">
-                <button aria-label="Diminuer" className="p-3 hover:text-primary" onClick={() => setQty(Math.max(1, qty - 1))}><Minus className="h-4 w-4" /></button>
-                <span className="w-10 text-center font-black">{qty}</span>
-                <button aria-label="Augmenter" className="p-3 hover:text-primary" onClick={() => setQty(qty + 1)}><Plus className="h-4 w-4" /></button>
-              </div>
+            <p className="mt-6 text-lg text-muted-foreground whitespace-pre-line">{p.description}</p>
+            <div className="mt-2 inline-flex w-fit items-center gap-2 rounded-sm   text-m font-bold">
+              Prix : <span className="text-primary">{p.prix}</span>
+            </div>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              
               <a href={waProduct(p.name, qty)} target="_blank" rel="noreferrer" className="btn-primary flex-1 sm:flex-none">
                 <WhatsAppIcon className="h-4 w-4" /> Commander maintenant
               </a>

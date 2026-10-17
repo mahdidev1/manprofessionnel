@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import catInterior from "@/assets/cat-interior.jpg";
 import { PageHeader, CTASection } from "@/components/CTASection";
 import { WhyUs } from "@/components/WhyUs";
+import home from "@/assets/home.jpg"
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -22,14 +23,12 @@ function About() {
     <>
       <PageHeader eyebrow="À propos" title="MAN Professionnel — Votre partenaire pour l'entretien automobile" />
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-2 lg:items-center">
-        <img src={catInterior} alt="Nettoyage professionnel d'un tableau de bord" loading="lazy" className="aspect-[4/3] w-full rounded-lg border object-cover" />
+        <img src={home} alt="Nettoyage professionnel d'un tableau de bord" loading="lazy" className="aspect-[4/3] w-full rounded-lg border object-cover" />
         <div>
           <p className="text-lg leading-relaxed text-muted-foreground">
-            MAN Professionnel développe et distribue des produits conçus pour le nettoyage et l'entretien automobile : lavage extérieur, entretien intérieur, nettoyage moteur et soin des pneus.
-          </p>
+            MAN PROFESSIONNEL : Propose une large gamme de produits dédiés aux entreprises dans le secteur de l’entretien automobile. Les produits chimiques pour le nettoyage et l’entretien des voitures sont fabriqués par le Laboratoire 7N-LAB          </p>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Nos produits sont proposés en bidons de 5 L, un format adapté aux professionnels comme aux particuliers exigeants, avec possibilité de livraison.
-          </p>
+           Conformément aux normes rigoureuses de qualité et de protection de l’environnement. En conséquence, chacun de nos produits est une combinaison unique de haute efficacité et d’approche écologique.          </p>
           <ul className="mt-8 grid grid-cols-2 gap-3">
             {pillars.map((p) => (
               <li key={p} className="border-l-2 border-primary pl-3 text-sm font-bold uppercase tracking-wide">{p}</li>
